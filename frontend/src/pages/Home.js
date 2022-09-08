@@ -77,7 +77,54 @@ switch (e.target.name) {
           name = 'skill'
           onChange={(e)=>handleChange(e)}
         >
-          <li className = 'select-item' value = 'python'>Python</li>
+            <MenuItem className = 'select-item' value = 'all'>All</MenuItem>
+            <MenuItem className = 'select-item' value = '.net'>.Net</MenuItem>
+            <MenuItem className = 'select-item' value = 'android'>Android</MenuItem>
+            <MenuItem className = 'select-item' value = 'angular'>Angular</MenuItem>
+            <MenuItem className = 'select-item' value = 'aws'>AWS</MenuItem>
+            <MenuItem className = 'select-item' value = 'blockchain'>Blockchain</MenuItem>
+            <MenuItem className = 'select-item' value = 'c++'>C++</MenuItem>
+            <MenuItem className = 'select-item' value = 'cloud'>Cloud</MenuItem>
+            <MenuItem className = 'select-item' value = 'csharp'>C#</MenuItem>
+            <MenuItem className = 'select-item' value = 'css'>CSS</MenuItem>
+            <MenuItem className = 'select-item' value = 'devops'>Devops</MenuItem>
+            <MenuItem className = 'select-item' value = 'django'>Django</MenuItem>
+            <MenuItem className = 'select-item' value = 'docker'>Docker</MenuItem>
+            <MenuItem className = 'select-item' value = 'elixir'>Elixir</MenuItem>
+            <MenuItem className = 'select-item' value = 'engineer'>Engineer</MenuItem>
+            <MenuItem className = 'select-item' value = 'flask'>Flask</MenuItem>
+            <MenuItem className = 'select-item' value = 'golang'>Golang</MenuItem>
+            <MenuItem className = 'select-item' value = 'ios'>IOS</MenuItem>
+            <MenuItem className = 'select-item' value = 'java'>Java</MenuItem>
+            <MenuItem className = 'select-item' value = 'javascript'>Javascript</MenuItem>
+            <MenuItem className = 'select-item' value = 'junior'>Junior</MenuItem>
+            <MenuItem className = 'select-item' value = 'kotlin'>Kotlin</MenuItem>
+            <MenuItem className = 'select-item' value = 'kubernetes'>Kubernetes</MenuItem>
+            <MenuItem className = 'select-item' value = 'manager'>Manager</MenuItem>
+            <MenuItem className = 'select-item' value = 'mobile'>Mobile</MenuItem>
+            <MenuItem className = 'select-item' value = 'mongodb'>MongoDB</MenuItem>
+            <MenuItem className = 'select-item' value = 'nodejs'>NodeJS</MenuItem>
+            <MenuItem className = 'select-item' value = 'nosql'>NoSQL</MenuItem>
+            <MenuItem className = 'select-item' value = 'php'>PHP</MenuItem>
+            <MenuItem className = 'select-item' value = 'postgres'>Postgres</MenuItem>
+            <MenuItem className = 'select-item' value = 'python'>Python</MenuItem>
+            <MenuItem className = 'select-item' value = 'react'>React</MenuItem>
+            <MenuItem className = 'select-item' value = 'react-native'>React-Native</MenuItem>
+            <MenuItem className = 'select-item' value = 'reactjs'>ReactJS</MenuItem>
+            <MenuItem className = 'select-item' value = 'ruby-on-rails'>Ruby On Rails</MenuItem>
+            <MenuItem className = 'select-item' value = 'rust'>Rust</MenuItem>
+            <MenuItem className = 'select-item' value = 'scala'>Scala</MenuItem>
+            <MenuItem className = 'select-item' value = 'senior'>Senior</MenuItem>
+            <MenuItem className = 'select-item' value = 'sql'>SQL</MenuItem>
+            <MenuItem className = 'select-item' value = 'svelte'>Svelte</MenuItem>
+            <MenuItem className = 'select-item' value = 'typescript'>Typescript</MenuItem>
+            <MenuItem className = 'select-item' value = 'vue'>Vue</MenuItem>
+            <MenuItem className = 'select-item' value = 'vuejs'>VueJS</MenuItem>
+            <MenuItem className = 'select-item' value = 'web3'>Web3.0</MenuItem>
+
+  
+ 
+          
         </Select>
         <h5>Country</h5>
         <Select
@@ -89,8 +136,22 @@ switch (e.target.name) {
           name = 'country'
           onChange={(e)=>handleChange(e)}
         >
-          <li className = 'select-item' value = 'Austria'>Austria</li>
+            <MenuItem className = 'select-item' value = 'all'>All</MenuItem>
+          <MenuItem className = 'select-item' value = 'Austria'>Austria</MenuItem>
+          <MenuItem className = 'select-item' value = 'Argentina'>Argentina</MenuItem>
+          <MenuItem className = 'select-item' value = 'Brazil'>Brazil</MenuItem>
+          <MenuItem className = 'select-item' value = 'Canada'>Canada</MenuItem>
+          <MenuItem className = 'select-item' value = 'Germany'>Germany</MenuItem>
+          <MenuItem className = 'select-item' value = 'India'>India</MenuItem>
+          <MenuItem className = 'select-item' value = 'Mexico'>Mexico</MenuItem>
+          <MenuItem className = 'select-item' value = 'Portugal'>Portugal</MenuItem>
+          <MenuItem className = 'select-item' value = 'Spain'>Spain</MenuItem>
+          <MenuItem className = 'select-item' value = 'Switzerland'>Switzerland</MenuItem>
+          <MenuItem className = 'select-item' value = 'United Kingdom'>United Kingdom</MenuItem>
+          <MenuItem className = 'select-item' value = 'United States of America'>United States of America</MenuItem>
+
         </Select>
+        <h5>Remote Job Position</h5>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -100,8 +161,12 @@ switch (e.target.name) {
           name = 'remote'
           onChange={(e)=>handleChange(e)}
         >
-          <li className = 'select-item' value = 'remote'>Remote</li>
+            <MenuItem className = 'select-item' value = 'all'>All</MenuItem>
+          <MenuItem className = 'select-item' value = 'remote'>Fully Remote</MenuItem>
+          <MenuItem className = 'select-item' value = 'partlyRemote'>Partly Remote</MenuItem>
+          <MenuItem className = 'select-item' value = 'false'>In Office</MenuItem>
         </Select>
+        <h5>Description Language</h5>
         <Select
         
           labelId="demo-simple-select-label"
@@ -111,13 +176,18 @@ switch (e.target.name) {
           label="Language"
           name = 'language'
           onChange={(e)=>handleChange(e)}
-        >
-          <li className = 'select-item'  value = 'en'>English</li>
+        ><MenuItem className = 'select-item'  value = 'all'>All</MenuItem>
+          <MenuItem className = 'select-item'  value = 'en'>English</MenuItem>
+          <MenuItem className = 'select-item'  value = 'es'>Spanish</MenuItem>
+          <MenuItem className = 'select-item'  value = 'pt'>Portugese</MenuItem>
+          <MenuItem className = 'select-item'  value = 'fr'>French</MenuItem>
+          <MenuItem className = 'select-item'  value = 'de'>German</MenuItem>
+          <MenuItem className = 'select-item'  value = 'nl'>Dutch</MenuItem>
         </Select>
-        <Button onClick = {()=>navigate(`/jobs/${skill}/${country}/${remote}/${language}`)}>search</Button>
+        
       </div>
       <ul  className = 'job-list'>
-        {jobs.map((job,index)=>{
+        {jobs.length>0?jobs.map((job,index)=>{
           var postDate = new Date(job.time)
           var now = new Date()
           var postedDaysAgo = Math.abs(now-postDate)/(24*60*60*1000)
@@ -148,7 +218,7 @@ switch (e.target.name) {
             
            
           </div>)
-        })}
+        }):<div style={{padding:30}}><h1 >No Posts</h1><p style ={{color:'white'}}>please change search parameters</p></div>}
       </ul>
       
     </div>
