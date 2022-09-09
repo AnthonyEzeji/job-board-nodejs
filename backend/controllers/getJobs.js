@@ -19,6 +19,11 @@ class Jobs {
     var elemSelector = 'body > div > div > main > div > div > section.block.mb-6.text-gray-700 > div > div > div'
 
  $(elemSelector).children().each((childIdx,childElem)=>{
+  var feautured = false
+  if($(childElem).parent().parent().attr()?.class == 'job-header-featured'){
+    feautured = true
+
+  }
     let newListing = ($(childElem).find('h2'))
    let tempArr = $(newListing).attr('x-data').split('}')
    title = tempArr[0].split('string:')[1].split("'")[1]
@@ -43,7 +48,7 @@ $(childElem).find('script').each((idx,elem)=>{
  time = $(elem).text().split("'")[1]
 })
 
-listingHtmlArr.push({title, jobLink, company,skillArr,location,time})
+listingHtmlArr.push({title, jobLink, company,skillArr,location,time,feautured})
  })
 
 
@@ -59,7 +64,7 @@ listingHtmlArr.push({title, jobLink, company,skillArr,location,time})
 
 
 })
-
+console.log(listingHtmlArr)
 return listingHtmlArr
 
     } catch (error) {
