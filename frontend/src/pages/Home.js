@@ -28,7 +28,7 @@ function Home() {
          
           navigate(`/${skill}/${country}/${remote}/${language}`)
           setSkip(0)
-            await axios.get(`http://localhost:5000/jobs/${skill}/${country}/${remote}/${language}`).then(res=>{
+            await axios.get(`http://3.87.187.44:5000/jobs/${skill}/${country}/${remote}/${language}`).then(res=>{
               console.log(res.data)
               setJobs(res.data)
             })
@@ -40,7 +40,7 @@ function Home() {
     useEffect(() => {
         async function getMoreJobs(){
             if(skip>0){
-                await axios.get(`http://localhost:5000/jobs/${skill}/${country}/${remote}/${language}?skip=${skip}`).then(res=>{
+                await axios.get(`http://3.87.187.44:5000/jobs/${skill}/${country}/${remote}/${language}?skip=${skip}`).then(res=>{
                       console.log(res.data)
                       setJobs(res.data)
                     })

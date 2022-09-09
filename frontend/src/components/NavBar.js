@@ -44,7 +44,7 @@ function NavBar() {
   return (
     <div className = 'navbar'>
       < HomeIcon onClick={()=>navigate('/')} id='home-icon'/>
-      {!loggedIn ?<a className = 'login-btn' href="http://localhost:3000/login">Login</a>:<p className = 'login-btn' onClick={handleLogout}>Logout</p>}
+      {!loggedIn ?<a className = 'login-btn' href="http://3.87.187.44:2000/login">Login</a>:<p className = 'login-btn' onClick={handleLogout}>Logout</p>}
       <div onClick={handleSavedJobsClick}  className = 'saved-btn'><FavoriteIcon style={{color:'yellow'}}/><ArrowRightAltIcon style={{color:'yellow'}}/><AttachMoneyIcon  style={{color:'yellow'}}/></div>
       
     </div>

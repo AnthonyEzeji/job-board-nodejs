@@ -11,7 +11,7 @@ function Apply({props}) {
         console.log(currentJob)
         
      async function getJob(){
-        await axios.get(`http://localhost:5000/jobs/${params.jobId}/${params.title}`).then(res=>{
+        await axios.get(`http://3.87.187.44:5000/jobs/${params.jobId}/${params.title}`).then(res=>{
             const {descriptionArr, jobType,applicationLink} = res.data
           
            setJobInfo({...currentJob,descriptionArr,jobType,applicationLink})

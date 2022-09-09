@@ -12,7 +12,7 @@ function Login() {
 
     async function handleLoginClick(){
         try {
-            await axios.post('http://localhost:5000/users/login',loginCredentials).then(res=>{
+            await axios.post('http://3.87.187.44:5000/users/login',loginCredentials).then(res=>{
                 if(res.status == 200){
                     window.sessionStorage.setItem('logged-in-user', JSON.stringify(res.data))
                     navigate('/')
@@ -51,7 +51,7 @@ function Login() {
                 <Input id= 'password' onChange = {(e)=>handleChange(e)} type='password'/>
             </div>
             <Button onClick={handleLoginClick}>Login</Button>
-            <p style = {{color:'white'}}>Dont have an account? <a style={{color:'white'}} href = 'http://localhost:3000/register'>Register</a></p>
+            <p style = {{color:'white'}}>Dont have an account? <a style={{color:'white'}} href = 'http://3.87.187.44:2000/register'>Register</a></p>
         </div>
       
     </div>

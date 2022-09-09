@@ -15,7 +15,7 @@ function SavedJobs() {
         setloggedInUser(JSON.parse(window.sessionStorage.getItem('logged-in-user')))
    async function getSavedJobs(){
     try {
-        await axios.get(`http://localhost:5000/saved-jobs/${params.email}`).then(res=>{
+        await axios.get(`http://3.87.187.44:5000/saved-jobs/${params.email}`).then(res=>{
         setSavedJobs(res.data)
     })
     } catch (error) {
