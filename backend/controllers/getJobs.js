@@ -64,7 +64,7 @@ listingHtmlArr.push({title, jobLink, company,skillArr,location,time,feautured})
 
 
 })
-console.log(listingHtmlArr)
+
 return listingHtmlArr
 
     } catch (error) {
