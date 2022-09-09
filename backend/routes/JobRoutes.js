@@ -1,12 +1,13 @@
 const { default: axios } = require('axios')
 const express = require('express')
-const Jobs = require('../backend/getJobs')
+const Jobs = require('../controllers/getJobs')
 const cheerio = require('cheerio')
+
 
 var router = express.Router()
 
 router.get('/:skill/:country/:remote/:language', async (req,res)=>{
-console.log(process.env.URL)
+
     jobSearch = new Jobs()
     if(req.query.hasOwnProperty('skip')){
      
@@ -33,6 +34,7 @@ router.get('/:jobId/:title', async (req,res)=>{
 const {jobType,descriptionArr,applicationLink} = await jobSearch.getSpecificJob(`${process.env.URL}${'job/'}${req.params.jobId}/${req.params.title}`)
 res.send({jobType,descriptionArr,applicationLink})
 })
+
 
 
 module.exports = router

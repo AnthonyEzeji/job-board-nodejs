@@ -7,6 +7,7 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import '../css/Home.css'
 import BusinessIcon from '@mui/icons-material/Business';
 import JobItem from '../components/JobItem'
+import NavBar from '../components/NavBar'
 function Home() {
   var navigate = useNavigate()
   var params = useParams()
@@ -72,11 +73,7 @@ switch (e.target.name) {
      console.log('Skill:'+skill + " country: "+ country + " remote: " + remote + ' language: ' + language)
     }, [skill,country,remote,language])
 
-    async function handleApplyClick(e){
-      console.log(e.target.id)
-      window.sessionStorage.setItem('current-job',JSON.stringify(jobs[e.target.id]))
-      navigate(`${e.target.value}`)
-    }
+
     function handleSkip(num){
         if(num == -20){
            if(skip+num<0){
@@ -94,7 +91,7 @@ switch (e.target.name) {
     }
   return (
     <div className = 'home'>
-      
+        <NavBar/>
       <div className='selector'>
       <h5>Skill</h5>
         <Select
@@ -224,9 +221,7 @@ switch (e.target.name) {
       </div>
       <ul  className = 'job-list'>
         {jobs.length>0?jobs.map((job,index)=>{
-          var postDate = new Date(job.time)
-          var now = new Date()
-          var postedDaysAgo = Math.abs(now-postDate)/(24*60*60*1000)
+          
           return(
             <JobItem props={job}/>
           )

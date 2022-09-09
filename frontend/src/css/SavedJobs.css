@@ -1,0 +1,9 @@
+.saved-jobs{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    background-color: rgb(20, 7, 7);
+}

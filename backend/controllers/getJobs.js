@@ -59,7 +59,7 @@ listingHtmlArr.push({title, jobLink, company,skillArr,location,time})
 
 
 })
-  console.log(listingHtmlArr)
+
 return listingHtmlArr
 
     } catch (error) {
@@ -109,9 +109,9 @@ return listingHtmlArr
           applicationLink = tempArr[0]
      })
     } catch (error) {
-      console.log(error)
+     
     }
-    console.log({jobType, descriptionArr,applicationLink})
+   
   return {jobType, descriptionArr,applicationLink}
   }
 }

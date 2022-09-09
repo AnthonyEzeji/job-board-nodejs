@@ -8,6 +8,7 @@
     justify-content: space-evenly;
 }
 .home{
+    padding-top: 50px;
     display: flex;
     width: 100vw;
     min-height: 100vh;
@@ -35,9 +36,9 @@
     padding: 0%;
     height: 90vh;
    overflow-y: scroll;
- 
+   background-color: rgb(46, 17, 17);
    
-   border: 1px solid black;
+   border: 1px solid rgba(110, 105, 105, 0.247);
     
 }
 .job-list-item{
