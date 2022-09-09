@@ -18,8 +18,8 @@ function App() {
         <Route path='/saved-jobs/:email' element={<SavedJobs/>}></Route>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
-        <Route exact path='/:skill/:country/:remote/:language' element={<Home/>}></Route>
-        <Route path='/:skill/:country/:remote/:language?skip' element={<Home/>}></Route>
+        <Route path='/:skill/:country/:remote/:language' element={<Home/>}></Route>
+        
       </Routes>
       </BrowserRouter>
       </div>

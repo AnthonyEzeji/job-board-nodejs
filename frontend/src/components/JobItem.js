@@ -43,7 +43,7 @@ function JobItem({props}) {
       
         if(loggedIn){
           console.log(loggedInUser.email)
-          await axios.post(`http://localhost:5000/saved-jobs/${loggedInUser.email}`, props).then(res=>{
+          await axios.post(`http://3.87.187.44:5000/saved-jobs/${loggedInUser.email}`, props).then(res=>{
             if(res.data.hasOwnProperty('message')){
               alert(res.data.message)
             }else{
@@ -57,7 +57,7 @@ function JobItem({props}) {
       }
       async function handleUnsaveClick(){
         if(loggedIn){
-          await axios.delete(`http://localhost:5000/saved-jobs/${loggedInUser.email}`, {data:props}).then(res=>{
+          await axios.delete(`http://3.87.187.44:5000/saved-jobs/${loggedInUser.email}`, {data:props}).then(res=>{
             window.location.reload(false);
           })
          
