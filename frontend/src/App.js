@@ -14,11 +14,11 @@ function App() {
       <BrowserRouter>
    
       <Routes>
-        <Route path='/job/:jobId/:title' element={<Apply/>}></Route>
-        <Route path='/saved-jobs/:email' element={<SavedJobs/>}></Route>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/:skill/:country/:remote/:language' element={<Home/>}></Route>
+        <Route exact path='/job/:jobId/:title' element={<Apply/>}></Route>
+        <Route exact path='/saved-jobs/:email' element={<SavedJobs/>}></Route>
+        <Route exact path='/' element={<Home/>}></Route>
+        <Route exact path='/login' element={<Login/>}></Route>
+        <Route exact path='/:skill/:country/:remote/:language' element={<Home/>}></Route>
         
       </Routes>
       </BrowserRouter>
