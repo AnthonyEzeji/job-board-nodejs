@@ -10,7 +10,7 @@ console.log(process.env.URL)
     jobSearch = new Jobs()
     if(req.query.hasOwnProperty('skip')){
      
-  jobSearch.getJobs(`${process.env.URL}${'jobs/'}${req.params.skill}/${req.params.country}/${req.params.remote}/${req.params.language}?skip=${req.query.skip}&limit=${req.query.limit}`).then(jobs=>{
+  jobSearch.getJobs(`${process.env.URL}${'jobs/'}${req.params.skill}/${req.params.country}/${req.params.remote}/${req.params.language}?skip=${req.query.skip}&limit=20`).then(jobs=>{
 
         res.send(jobs)
     })

@@ -52,7 +52,7 @@ function Apply({props}) {
             </div>
         
         </div>
-      <a id ='apply-btn' href={jobInfo.applicationLink}>
+      <a target="_blank" id ='apply-btn' href={jobInfo.applicationLink}>
         Apply For This Job
       </a>
         <div className="description" style={{width:'75vw'}}>

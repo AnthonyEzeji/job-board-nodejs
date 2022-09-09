@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 35vw;
     margin: 20px;
-    height: 400px;
+    height: fit-content;
 
     justify-content: space-evenly;
 }
@@ -57,7 +57,7 @@
 }
 .select-item{
  font-weight: 600;
-  color: rgb(207, 184, 52);
+  color: rgb(240, 209, 36);
   padding: 2px;
     background-color: rgb(0, 0, 0);
     text-align: center;
@@ -144,4 +144,21 @@ border-radius: 0;
 }
 .selector>h5{
     margin-top: 10px;
+}
+.skip-container{
+    margin-top: 20px;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    background-color: rgb(49, 70, 50);
+    justify-content: center;
+}
+.skip-container>h2{
+    color: rgb(240, 209, 36);
+}
+.skip-container>p{
+    color: rgb(240, 209, 36);
+}
+.skip-container>Button{
+    color:rgb(240, 209, 36); ;
 }

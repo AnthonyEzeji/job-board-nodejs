@@ -6,6 +6,7 @@ import SelectInput from '@mui/material/Select/SelectInput'
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import '../css/Home.css'
 import BusinessIcon from '@mui/icons-material/Business';
+import JobItem from '../components/JobItem'
 function Home() {
   var navigate = useNavigate()
   var params = useParams()
@@ -23,7 +24,7 @@ function Home() {
         async function getJobs(){
          
           navigate(`/${skill}/${country}/${remote}/${language}`)
- 
+          setSkip(0)
             await axios.get(`http://localhost:5000/jobs/${skill}/${country}/${remote}/${language}`).then(res=>{
               console.log(res.data)
               setJobs(res.data)
@@ -32,7 +33,21 @@ function Home() {
             
         }
       getJobs()
-    }, [skill,country,remote,language,skip])
+    }, [skill,country,remote,language])
+    useEffect(() => {
+        async function getMoreJobs(){
+            if(skip>0){
+                await axios.get(`http://localhost:5000/jobs/${skill}/${country}/${remote}/${language}?skip=${skip}`).then(res=>{
+                      console.log(res.data)
+                      setJobs(res.data)
+                    })
+              }
+             
+        }
+        getMoreJobs()
+     
+    }, [skip])
+    
     function handleChange(e){
       
       console.log(e.target.name)
@@ -61,6 +76,21 @@ switch (e.target.name) {
       console.log(e.target.id)
       window.sessionStorage.setItem('current-job',JSON.stringify(jobs[e.target.id]))
       navigate(`${e.target.value}`)
+    }
+    function handleSkip(num){
+        if(num == -20){
+           if(skip+num<0){
+            setSkip(0)
+           }else{
+            setSkip(skip+num)
+           }
+        }else if(num == 20){
+                if(jobs.length<20){
+                 return
+            }else{
+                setSkip(skip+num)
+            }
+         }
     }
   return (
     <div className = 'home'>
@@ -184,7 +214,13 @@ switch (e.target.name) {
           <MenuItem className = 'select-item'  value = 'de'>German</MenuItem>
           <MenuItem className = 'select-item'  value = 'nl'>Dutch</MenuItem>
         </Select>
-        
+        <div  className="skip-container">
+            <Button onClick={()=>handleSkip(-20)} >prev</Button>
+            <h2>{0+skip } - {20+skip}</h2>
+            
+            <h2></h2>
+            <Button onClick={()=>handleSkip(20)} >next</Button>
+        </div>
       </div>
       <ul  className = 'job-list'>
         {jobs.length>0?jobs.map((job,index)=>{
@@ -192,32 +228,8 @@ switch (e.target.name) {
           var now = new Date()
           var postedDaysAgo = Math.abs(now-postDate)/(24*60*60*1000)
           return(
-          <div className = 'job-list-item'>
-            <h2>{job.title}</h2>
-            <ul className = 'skill-list'>
-            {job.skillArr.slice(0,5).map(skill=>{
-              
-              return(<li className = 'skill-item'>{skill}</li>)
-            })}
-            </ul>
-            <div className="job-list-item-bottom">
-              <div className="job-posted">
-                <AccessAlarmIcon/>
-                <h3 style={{color:'white'}}>{postedDaysAgo<1?'Today':Math.floor(postedDaysAgo)+' day(s) ago'} </h3>
-                
-              </div>
-            <div className = 'job-location'>
-              <BusinessIcon/>
-              <h3 style={{color:'white'}}>{job.location}</h3>
-            </div>
-            <div className='job-item-btns'>
-              <Button>Save</Button>
-            <Button id = {index} value = {job.jobLink} onClick={((e)=>handleApplyClick(e))}>Apply</Button>
-            </div>
-            </div>
-            
-           
-          </div>)
+            <JobItem props={job}/>
+          )
         }):<div style={{padding:30}}><h1 >No Posts</h1><p style ={{color:'white'}}>please change search parameters</p></div>}
       </ul>
       
