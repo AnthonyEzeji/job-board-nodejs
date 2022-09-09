@@ -4,7 +4,7 @@ import axios from 'axios'
 import JobItem from '../components/JobItem'
 import '../css/SavedJobs.css'
 import NavBar from '../components/NavBar'
-import { set } from 'mongoose'
+
 
 function SavedJobs() {
     var params = useParams()

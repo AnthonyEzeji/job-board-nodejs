@@ -8,6 +8,8 @@ import '../css/Home.css'
 import BusinessIcon from '@mui/icons-material/Business';
 import JobItem from '../components/JobItem'
 import NavBar from '../components/NavBar'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Home() {
   var navigate = useNavigate()
   var params = useParams()
@@ -91,6 +93,7 @@ switch (e.target.name) {
     }
   return (
     <div className = 'home'>
+       <ToastContainer />
         <NavBar/>
       <div className='selector'>
       <h5>Skill</h5>

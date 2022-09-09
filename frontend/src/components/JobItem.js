@@ -5,7 +5,8 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import BusinessIcon from '@mui/icons-material/Business';
 import axios from 'axios'
 import '../css/Home.css'
-import { set } from 'mongoose';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function JobItem({props}) {
   console.log(props)
   var params = useParams()
@@ -16,9 +17,7 @@ function JobItem({props}) {
     const [loggedIn, setLoggedIn] = useState(false)
   const [loggedInUser, setLoggedInUser] = useState({})
   const [onSavedJobsPage, setOnSavedJobsPage] = useState(false)
-   function refreshPage() {
-    window.location.reload(false);
-  }
+  const notify = (toastString) => toast.success(toastString,{toastId:'success1'});
   useEffect(() => {
     
     if(window.sessionStorage.hasOwnProperty('logged-in-user')){
@@ -41,13 +40,14 @@ function JobItem({props}) {
         navigate(`${e.target.value}`)
       }
       async function handleSaveClick(){
+      
         if(loggedIn){
           console.log(loggedInUser.email)
           await axios.post(`http://localhost:5000/saved-jobs/${loggedInUser.email}`, props).then(res=>{
             if(res.data.hasOwnProperty('message')){
               alert(res.data.message)
             }else{
-              alert('Job: ' + res.data.title + ' saved!')
+             notify('Job: ' + res.data.title + ' saved!')
             }
            
           })
@@ -68,6 +68,20 @@ function JobItem({props}) {
   return (
    
     <div className = 'job-list-item'>
+   <ToastContainer 
+      
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+     
+      draggable
+    color='red'
+      theme='dark'
+     
+      />
             <h2>{props.title}</h2>
             <ul className = 'skill-list'>
             {props.skillArr.slice(0,5).map(skill=>{
