@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const router =  express.Router()
 
 router.post('/register',async (req,res)=>{
+  res.header("Access-Control-Allow-Origin", "true");
     let body = req.body
     console.log(body)
     try {
@@ -29,7 +30,7 @@ router.post('/register',async (req,res)=>{
     }
 })
 router.post('/login',async(req,res)=>{
-
+  res.header("Access-Control-Allow-Origin", "true");
     try {
        const user = await userModel.findOne({email:req.body?.email.toLowerCase()})
        if(user){

@@ -7,6 +7,7 @@ const savedJobModel = require('../models/SavedJobModel')
 var router = express.Router()
 
 router.post('/:email',async(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "true");
     try {
 
         await savedJobModel.findOne({jobLink:req.body.jobLink, email:req.params.email}).then(doc=>{
@@ -25,7 +26,7 @@ router.post('/:email',async(req,res)=>{
     }
    })
    router.get('/:email',async(req,res)=>{
-    
+    res.header("Access-Control-Allow-Origin", "true");
        try {
           await savedJobModel.find({email:req.params.email}).then(docs=>{
            res.send(docs)
@@ -36,7 +37,7 @@ router.post('/:email',async(req,res)=>{
        }
       })
       router.delete('/:email',async(req,res)=>{
-       
+        res.header("Access-Control-Allow-Origin", "true");
         try {
            await savedJobModel.findByIdAndDelete(req.body._id).then(doc=>{
             res.send(doc)

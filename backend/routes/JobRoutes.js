@@ -7,7 +7,7 @@ const cheerio = require('cheerio')
 var router = express.Router()
 
 router.get('/:skill/:country/:remote/:language', async (req,res)=>{
-
+    res.header("Access-Control-Allow-Origin", "true");
     jobSearch = new Jobs()
     if(req.query.hasOwnProperty('skip')){
      
@@ -28,7 +28,7 @@ router.get('/:skill/:country/:remote/:language', async (req,res)=>{
 })
 
 router.get('/:jobId/:title', async (req,res)=>{
-
+    res.header("Access-Control-Allow-Origin", "true");
   const jobSearch = new Jobs()
 
 const {jobType,descriptionArr,applicationLink} = await jobSearch.getSpecificJob(`${process.env.URL}${'job/'}${req.params.jobId}/${req.params.title}`)
