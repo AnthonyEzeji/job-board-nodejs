@@ -10,7 +10,7 @@ const userRoutes = require('./routes/UserRoutes')
 const cors = require('cors')
 var app = express()
 
-app.use(cors({origin: 'https://job-board-nodejs.vercel.app'}), express.json())
+app.use(cors({origin: '*'}), express.json())
 
 app.use('/jobs', jobRoutes)
 app.use('/saved-jobs', savedJobRoutes)
