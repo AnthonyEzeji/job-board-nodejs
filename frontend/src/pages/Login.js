@@ -12,7 +12,7 @@ function Login() {
 
     async function handleLoginClick(){
         try {
-            await axios.post('http://https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app//users/login',loginCredentials).then(res=>{
+            await axios.post('https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/users/login',loginCredentials).then(res=>{
                 if(res.status == 200){
                     window.sessionStorage.setItem('logged-in-user', JSON.stringify(res.data))
                     navigate('/')

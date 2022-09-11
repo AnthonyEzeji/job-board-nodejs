@@ -11,7 +11,7 @@ function Apply({props}) {
         console.log(currentJob)
         
      async function getJob(){
-        await axios.get(`http://https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app//jobs/${params.jobId}/${params.title}`).then(res=>{
+        await axios.get(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/jobs/${params.jobId}/${params.title}`).then(res=>{
             const {descriptionArr, jobType,applicationLink} = res.data
           
            setJobInfo({...currentJob,descriptionArr,jobType,applicationLink})
