@@ -51,7 +51,7 @@ function Login() {
                 <Input id= 'password' onChange = {(e)=>handleChange(e)} type='password'/>
             </div>
             <Button onClick={handleLoginClick}>Login</Button>
-            <p style = {{color:'white'}}>Dont have an account? <a style={{color:'white'}} href = 'http://3.87.187.44:2000/register'>Register</a></p>
+            <p style = {{color:'white'}}>Dont have an account? <a style={{color:'white'}} href = '/register'>Register</a></p>
         </div>
       
     </div>
