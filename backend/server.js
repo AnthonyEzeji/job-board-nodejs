@@ -9,7 +9,7 @@ const db  = mongoose.connect(process.env.DB, ()=>{
 const userRoutes = require('./routes/UserRoutes')
 const cors = require('cors')
 var app = express()
-app.use(cors(), express.json())
+app.use(cors({origin: /\.vercel\.app$/}), express.json())
 app.use('/jobs', jobRoutes)
 app.use('/saved-jobs', savedJobRoutes)
 app.use('/users',userRoutes)
