@@ -8,7 +8,7 @@ import '../css/Home.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function JobItem({props}) {
-  console.log(props)
+  
   var params = useParams()
     var postDate = new Date(props.time)
     var now = new Date()
@@ -33,7 +33,7 @@ function JobItem({props}) {
       setOnSavedJobsPage(true)
     }
   }, [])
-  console.log(loggedInUser)
+
     async function handleApplyClick(e){
         console.log(e.target.id)
         window.sessionStorage.setItem('current-job',JSON.stringify(props))
@@ -43,7 +43,7 @@ function JobItem({props}) {
       
         if(loggedIn){
           console.log(loggedInUser.email)
-          await axios.post(`http://3.87.187.44:5000/saved-jobs/${loggedInUser.email}`, props).then(res=>{
+          await axios.post(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/saved-jobs/${loggedInUser.email}`, props).then(res=>{
             if(res.data.hasOwnProperty('message')){
               alert(res.data.message)
             }else{
@@ -57,7 +57,7 @@ function JobItem({props}) {
       }
       async function handleUnsaveClick(){
         if(loggedIn){
-          await axios.delete(`http://3.87.187.44:5000/saved-jobs/${loggedInUser.email}`, {data:props}).then(res=>{
+          await axios.delete(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/saved-jobs/${loggedInUser.email}`, {data:props}).then(res=>{
             window.location.reload(false);
           })
          
@@ -84,9 +84,9 @@ function JobItem({props}) {
       />
             <h2>{props.title}</h2>
             <ul className = 'skill-list'>
-            {props.skillArr.slice(0,5).map(skill=>{
+            {props.skillArr.slice(0,5).map((skill,index)=>{
               
-              return(<li className = 'skill-item'>{skill}</li>)
+              return(<li key={index} className = 'skill-item'>{skill}</li>)
             })}
             </ul>
             <div className="job-list-item-bottom">

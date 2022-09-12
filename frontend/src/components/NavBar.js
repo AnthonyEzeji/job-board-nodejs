@@ -13,7 +13,7 @@ function NavBar() {
     if(window.sessionStorage.hasOwnProperty('logged-in-user')){
     
       if(JSON.parse(window.sessionStorage.getItem('logged-in-user'))?.hasOwnProperty('email')){
-        console.log('authenticated')
+    
         setLoggedIn(true)
         setLoggedInUser(JSON.parse(window.sessionStorage.getItem('logged-in-user')))
       }
@@ -26,9 +26,7 @@ function NavBar() {
     
     navigate('/login')
   }
-  useEffect(() => {
-   console.log(loggedIn)
-  }, [loggedIn])
+
   function handleSavedJobsClick(){
     if(window.sessionStorage.hasOwnProperty('logged-in-user')){
     

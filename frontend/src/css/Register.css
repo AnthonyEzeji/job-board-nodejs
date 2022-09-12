@@ -1,4 +1,4 @@
-.login{
+.register{
     background-color:rgb(20, 7, 7) ;
     width: 100vw;
     height: 100vh;
@@ -7,24 +7,22 @@
   align-items: center;
     justify-content: center;
 
-
 }
-
-
-.login-form{
-width: fit-content;
+.register-form{
+    width: fit-content;
+    height: fit-content;
 background-color:  rgb(49, 70, 50);
 padding: 20px;
 border-radius: 20px;
 }
-.login-form>Button{
+.input{
+    background-color: aliceblue;
+    margin: 0;
+}
+h5{
+    margin: 10px;
+}
+.register-form>Button{
     background-color: rgb(68, 87, 69);
-    color: yellow;
-    margin: 20px;
-}
-#email{
-  background-color: aliceblue;
-}
-#password{
-  background-color: aliceblue;
+    margin-top: 50px;
 }

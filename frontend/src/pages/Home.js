@@ -29,7 +29,7 @@ function Home() {
           navigate(`/${skill}/${country}/${remote}/${language}`)
           setSkip(0)
             await axios.get(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/jobs/${skill}/${country}/${remote}/${language}`).then(res=>{
-              console.log(res.data)
+         
               setJobs(res.data)
             })
           
@@ -41,7 +41,7 @@ function Home() {
         async function getMoreJobs(){
             if(skip>0){
                 await axios.get(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/jobs/${skill}/${country}/${remote}/${language}?skip=${skip}`).then(res=>{
-                      console.log(res.data)
+               
                       setJobs(res.data)
                     })
               }
@@ -53,7 +53,7 @@ function Home() {
     
     function handleChange(e){
       
-      console.log(e.target.name)
+    
 switch (e.target.name) {
   case 'skill':
     setSkill(e.target.value)
@@ -71,9 +71,7 @@ switch (e.target.name) {
     break;
 }
     }
-    useEffect(() => {
-     console.log('Skill:'+skill + " country: "+ country + " remote: " + remote + ' language: ' + language)
-    }, [skill,country,remote,language])
+  
 
 
     function handleSkip(num){
@@ -226,7 +224,7 @@ switch (e.target.name) {
         {jobs.length>0?jobs.map((job,index)=>{
           
           return(
-            <JobItem props={job}/>
+            <JobItem key ={index} props={job}/>
           )
         }):<div style={{padding:30}}><h1 >No Posts</h1><p style ={{color:'white'}}>please change search parameters</p></div>}
       </ul>
