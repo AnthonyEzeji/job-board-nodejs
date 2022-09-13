@@ -33,8 +33,12 @@ function NavBar() {
       if(JSON.parse(window.sessionStorage.getItem('logged-in-user'))?.hasOwnProperty('email')){
         navigate(`/saved-jobs/${JSON.parse(window.sessionStorage.getItem('logged-in-user')).email}`)
       
+      }else{
+        alert('Please login to view saved job listings.')
       }
       
+    }else{
+      alert('Please login to view saved job listings.')
     }
     
   }
