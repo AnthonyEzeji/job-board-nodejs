@@ -51,17 +51,19 @@ function JobItem({props}) {
             }
            
           })
+        }else{
+          alert('Please login to save a job listing.')
         }
          
         
       }
       async function handleUnsaveClick(){
-        if(loggedIn){
+        
           await axios.delete(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/saved-jobs/${loggedInUser.email}`, {data:props}).then(res=>{
             window.location.reload(false);
           })
          
-        }
+       
          
         
       }
