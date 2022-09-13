@@ -8,7 +8,7 @@ import '../css/Home.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function JobItem({props}) {
-  
+
   var params = useParams()
     var postDate = new Date(props.time)
     var now = new Date()
@@ -84,7 +84,8 @@ function JobItem({props}) {
       theme='dark'
      
       />
-            <h2 style={{ margin:0}}>{props.title}</h2>
+            <h2 style={{ margin:0}}>{props.feautured&&<p style = {{backgroundColor:'rgb(49, 70, 50)'}}>FEATURED</p>}{props.title}</h2>
+           
             <p style={{color:'white', margin:0}}>{props.company}</p>
             <ul className = 'skill-list'>
             {props.skillArr.slice(0,5).map((skill,index)=>{
