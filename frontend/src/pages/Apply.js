@@ -5,6 +5,7 @@ import '../css/Apply.css'
 import { Button } from '@mui/material'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from '../components/NavBar'
 function Apply({props}) {
     var params = useParams()
     console.log(params)
@@ -55,6 +56,7 @@ function Apply({props}) {
       const notify = (toastString) => toast.success(toastString,{toastId:'success1'});
   return (
     <div className = 'apply'>
+        <NavBar></NavBar>
         <div className="title">
             <h1>
                 {jobInfo.title}
