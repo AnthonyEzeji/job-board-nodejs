@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import '../css/Apply.css'
+import { Button } from '@mui/material'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Apply({props}) {
     var params = useParams()
     console.log(params)
     const [jobInfo, setJobInfo] = useState([])
+    const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedInUser, setLoggedInUser] = useState({})
     useEffect(() => {
         var currentJob = (JSON.parse(window.sessionStorage.getItem('current-job')))
         console.log(currentJob)
@@ -18,8 +23,36 @@ function Apply({props}) {
         })
      }
      getJob()
+
+     if(window.sessionStorage.hasOwnProperty('logged-in-user')){
+    
+        if(JSON.parse(window.sessionStorage.getItem('logged-in-user'))?.hasOwnProperty('email')){
+          
+          setLoggedIn(true)
+          setLoggedInUser(JSON.parse(window.sessionStorage.getItem('logged-in-user')))
+        }
+        
+      }
+      
     }, [params])
-    console.log(jobInfo)
+    async function handleSaveClick(){
+      
+        if(loggedIn){
+          console.log(loggedInUser.email)
+          await axios.post(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/saved-jobs/${loggedInUser.email}`, props).then(res=>{
+            if(res.data.hasOwnProperty('message')){
+              alert(res.data.message)
+            }else{
+             notify('Job: ' + res.data.title + ' saved!')
+            }
+           
+          })
+        }else{
+          alert('Please login to save a job listing.')
+        }
+      }
+
+      const notify = (toastString) => toast.success(toastString,{toastId:'success1'});
   return (
     <div className = 'apply'>
         <div className="title">
@@ -52,6 +85,7 @@ function Apply({props}) {
             </div>
         
         </div>
+        <Button id='save-btn' onClick ={handleSaveClick}>Save This Job</Button>
       <a target="_blank" id ='apply-btn' href={jobInfo.applicationLink}>
         Apply For This Job
       </a>

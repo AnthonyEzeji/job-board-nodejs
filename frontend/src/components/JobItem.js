@@ -84,7 +84,8 @@ function JobItem({props}) {
       theme='dark'
      
       />
-            <h2>{props.title}</h2>
+            <h2 style={{ margin:0}}>{props.title}</h2>
+            <p style={{color:'white', margin:0}}>{props.company}</p>
             <ul className = 'skill-list'>
             {props.skillArr.slice(0,5).map((skill,index)=>{
               
