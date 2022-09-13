@@ -85,10 +85,13 @@ function Apply({props}) {
             </div>
         
         </div>
-        <Button id='save-btn' onClick ={handleSaveClick}>Save This Job</Button>
+        <div style = {{display:'flex'}} className="apply-page-btns">
+        <p  id='save-btn' onClick ={handleSaveClick}>Save This Job</p>
       <a target="_blank" id ='apply-btn' href={jobInfo.applicationLink}>
-        Apply For This Job
+     Go To Application
       </a>
+        </div>
+        
         <div className="description" style={{width:'75vw'}}>
         {jobInfo.descriptionArr?.map((elem,index)=>{
         
