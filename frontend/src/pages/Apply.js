@@ -37,10 +37,10 @@ function Apply({props}) {
       
     }, [params])
     async function handleSaveClick(){
-      
+   
         if(loggedIn){
-          console.log(loggedInUser.email)
-          await axios.post(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/saved-jobs/${loggedInUser.email}`, props).then(res=>{
+          console.log(props)
+          await axios.post(`https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/saved-jobs/${loggedInUser.email}`, {jobLink:jobInfo.jobLink}).then(res=>{
             if(res.data.hasOwnProperty('message')){
               alert(res.data.message)
             }else{
