@@ -44,22 +44,22 @@ switch (e.target.id) {
         <NavBar/>
         <div className="register-form">
             <div className="register-form-input">
-                <h5>First Name</h5>
+                <h5 style={{color:'rgb(169, 178, 185)'}}>First Name</h5>
                 <Input onChange={(e)=>formInfoChangeHandler(e)} id = "first-name" className = 'input'></Input>
             </div>
             <div className="register-form-input">
-            <h5>Last Name</h5>
+            <h5 style={{color:'rgb(169, 178, 185)'}}>Last Name</h5>
             <Input onChange={(e)=>formInfoChangeHandler(e)} id ="last-name" className = 'input'></Input>
             </div>
             <div className="register-form-input">
-            <h5>E-mail</h5>
+            <h5 style={{color:'rgb(169, 178, 185)'}}>E-mail</h5>
             <Input onChange={(e)=>formInfoChangeHandler(e)} id ="email" className = 'input'></Input>
             </div>
             <div className="register-form-input">
-            <h5>Password</h5>
+            <h5 style={{color:'rgb(169, 178, 185)'}}>Password</h5>
             <Input onChange={(e)=>formInfoChangeHandler(e)} type='password' id ="password" className = 'input'></Input>
             </div>
-            <Button onClick={handleRegisterClick} style={{color:'yellow', marginTop:10}}>Register</Button>
+            <Button onClick={handleRegisterClick} style={{color:'rgb(169, 178, 185)', marginTop:10}}>Register</Button>
             <p style ={{color:'white'}}>Already have an account? <a style={{color:"white"}} href="/login">Login.</a></p>
         </div>
     </div>

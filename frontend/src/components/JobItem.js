@@ -84,7 +84,7 @@ function JobItem({props}) {
       theme='dark'
      
       />
-            <h2 style={{ margin:0}}>{props.feautured&&<p style = {{backgroundColor:'rgb(49, 70, 50)'}}>FEATURED</p>}{props.title}</h2>
+            <h2 style={{ margin:0}}>{props.feautured&&<p style = {{backgroundColor:'rgba(88, 98, 105, 0.877)'}}>FEATURED</p>}{props.title}</h2>
            
             <p style={{color:'white', margin:0}}>{props.company}</p>
             <ul className = 'skill-list'>

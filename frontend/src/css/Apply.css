@@ -1,6 +1,6 @@
 .skills{
-    background-color: rgb(49, 70, 50);
-     color: rgb(248, 246, 96);;
+    background-color: rgb(49, 61, 70);
+     color: rgb(169, 178, 185);;
     display: flex;
     width: 90vw;
     justify-content: space-evenly;
@@ -10,18 +10,18 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgb(20, 7, 7);
+    background-color: rgb(123, 129, 138);
     color: aliceblue;
     width: 100vw;
     min-height: 100vh;
     margin-top:50px
 }
 h1{
-    color: rgb(248, 246, 96);
+    color: rgb(169, 178, 185);
 }
 .description>p{
     padding: 2px;
-    color: rgb(153, 147, 153);
+    color: rgb(49, 61, 70);
 }
 .description{
     width: 99vw;
@@ -38,10 +38,10 @@ h1{
     margin-top: 20px;
 }
 h5{
-    color: rgb(248, 246, 96);;
+    color: rgb(169, 178, 185);;
 }
 #apply-btn{
-    background-color: rgb(49, 70, 50);
+    background-color: rgb(49, 61, 70);
     padding: 20px;
     transition: .1s border-radius;
     text-decoration: none;
@@ -54,7 +54,7 @@ h5{
     border-radius: 10px;
 }
 #save-btn{
-    background-color: rgb(49, 70, 50);
+    background-color: rgb(49, 61, 70);
     padding: 20px;
   border-radius:0 ;
     text-decoration: none;

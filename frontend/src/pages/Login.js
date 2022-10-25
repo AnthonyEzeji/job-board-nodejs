@@ -13,7 +13,10 @@ function Login() {
     async function handleLoginClick(){
         try {
             await axios.post('https://job-board-nodejs-server-70vpm8n7s-anthonyezeji.vercel.app/users/login',loginCredentials).then(res=>{
-                if(res.status == 200){
+              
+                if(res.data.hasOwnProperty('message')){
+                    alert(res.data.message)
+                }else if(res.data.hasOwnProperty('email')){
                     window.sessionStorage.setItem('logged-in-user', JSON.stringify(res.data))
                     navigate('/')
                 }
@@ -39,13 +42,13 @@ function Login() {
         <NavBar/>
         <div className="login-form">
             <div className="input-field">
-                <h5>
+                <h5 style={{color:'rgb(169, 178, 185)'}}>
                     E-mail
                 </h5>
                 <Input id= 'email' onChange = {(e)=>handleChange(e)}/>
             </div>
             <div className="input-field">
-                <h5>
+                <h5 style={{color:'rgb(169, 178, 185)'}}>
                     Password
                 </h5>
                 <Input id= 'password' onChange = {(e)=>handleChange(e)} type='password'/>

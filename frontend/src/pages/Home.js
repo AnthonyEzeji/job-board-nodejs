@@ -104,6 +104,7 @@ switch (e.target.name) {
           label="Skill"
           name = 'skill'
           onChange={(e)=>handleChange(e)}
+          style = {{width:'100%', backgroundColor:'white'}}
         >
             <MenuItem className = 'select-item' value = 'all'>All</MenuItem>
             <MenuItem className = 'select-item' value = '.net'>.Net</MenuItem>
@@ -163,6 +164,7 @@ switch (e.target.name) {
           label="Country"
           name = 'country'
           onChange={(e)=>handleChange(e)}
+          style = {{width:'100%', backgroundColor:'white'}}
         >
             <MenuItem className = 'select-item' value = 'all'>All</MenuItem>
           <MenuItem className = 'select-item' value = 'Austria'>Austria</MenuItem>
@@ -188,6 +190,7 @@ switch (e.target.name) {
           label="remote"
           name = 'remote'
           onChange={(e)=>handleChange(e)}
+          style = {{width:'100%', backgroundColor:'white'}}
         >
             <MenuItem className = 'select-item' value = 'all'>All</MenuItem>
           <MenuItem className = 'select-item' value = 'remote'>Fully Remote</MenuItem>
@@ -204,6 +207,7 @@ switch (e.target.name) {
           label="Language"
           name = 'language'
           onChange={(e)=>handleChange(e)}
+          style = {{width:'100%', backgroundColor:'white'}}
         ><MenuItem className = 'select-item'  value = 'all'>All</MenuItem>
           <MenuItem className = 'select-item'  value = 'en'>English</MenuItem>
           <MenuItem className = 'select-item'  value = 'es'>Spanish</MenuItem>

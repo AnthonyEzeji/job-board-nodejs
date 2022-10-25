@@ -1,5 +1,5 @@
 .register{
-    background-color:rgb(20, 7, 7) ;
+    background-color: rgb(123, 129, 138);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -11,7 +11,7 @@
 .register-form{
     width: fit-content;
     height: fit-content;
-background-color:  rgb(49, 70, 50);
+    background-color: rgb(49, 61, 70);
 padding: 20px;
 border-radius: 20px;
 }
@@ -23,6 +23,6 @@ h5{
     margin: 10px;
 }
 .register-form>Button{
-    background-color: rgb(68, 87, 69);
+    background-color: rgba(93, 96, 100, 0.664);
     margin-top: 50px;
 }

@@ -4,7 +4,7 @@
     width: 35vw;
     margin: 20px;
     height: fit-content;
-
+align-items: center;
     justify-content: space-evenly;
 }
 .home{
@@ -13,8 +13,11 @@
     width: 100vw;
     min-height: 100vh;
     height: fit-content;
-    background-color: rgb(20, 7, 7);
+    background-color: rgb(123, 129, 138);
+    align-items: center;
     justify-content: center;
+    font-family: 'Source Sans Pro', sans-serif;
+  
         
 }
 @media screen and (max-width:800px) {
@@ -39,21 +42,21 @@
     padding: 0%;
     height: 90vh;
    overflow-y: scroll;
-   background-color: rgb(46, 17, 17);
-   
-   border: 1px solid rgba(110, 105, 105, 0.247);
+   background-color: rgb(112, 118, 128);
+   width: 100%;
+   border: 1px solid rgba(34, 34, 34, 0.247);
     
 }
 .job-list-item{
    
-    border: 1px solid rgb(145, 93, 93);
-    color:rgb(248, 246, 96);
+    border: 1px solid rgb(108, 161, 197);
+    color:rgb(169, 178, 185);
     min-height: 150px;;
     min-width: 300px;
     width: 50vw;
     margin:20px;
     padding: 10px;
-    
+    background-color: rgb(49, 61, 70);
     display: flex;
     flex-direction: column;
     
@@ -61,16 +64,18 @@
 }
 .select-item{
  font-weight: 600;
-  color: rgb(240, 209, 36);
+  color: rgb(58, 83, 102);
   padding: 2px;
     background-color: rgb(0, 0, 0);
     text-align: center;
 }
 .selector>h5{
     margin:0;
-    color: rgb(255, 255, 255);
-   
 
+    font-size: 18px;
+    width: 100%;
+    color:rgb(169, 178, 185);
+background-color:rgb(49, 61, 70) ;
     min-height: 30px;;
 
 }
@@ -84,14 +89,16 @@
 }
 .skill-item{
     margin: 0;
-    background-color: rgb(49, 70, 50);
+    color: antiquewhite;
+    background-color: rgba(88, 98, 105, 0.877);
     border-radius: 5px;;
     padding: 5px;;
     text-decoration: none;
 }
 #demo-simple-select{
-    color: rgb(248, 246, 96);
-    background-color: rgba(240, 248, 255, 0.048);
+    color: rgb(98, 102, 105);
+    background-color: rgba(240, 252, 255, 0.048);
+    border: 1px solid rgb(109, 212, 243);
 }
 .job-item-btns{
     display: flex;
@@ -105,7 +112,7 @@
    
 }
 .job-item-btns>Button{
-background-color: rgb(49, 70, 50);
+background-color: rgba(88, 98, 105, 0.877);
 width: 100%;
 
 color:white;
@@ -154,15 +161,15 @@ border-radius: 0;
     display: flex;
     height: 80px;
     align-items: center;
-    background-color: rgb(49, 70, 50);
+    background-color: rgb(49, 61, 70);
     justify-content: center;
 }
 .skip-container>h2{
-    color: rgb(240, 209, 36);
+    color: rgb(169, 178, 185);
 }
 .skip-container>p{
-    color: rgb(240, 209, 36);
+    color: rgb(169, 178, 185);
 }
 .skip-container>Button{
-    color:rgb(240, 209, 36); ;
+    color:rgb(169, 178, 185); ;
 }
